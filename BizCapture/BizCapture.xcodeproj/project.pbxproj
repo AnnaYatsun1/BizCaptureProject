@@ -42,6 +42,7 @@
 			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
 			membershipExceptions = (
 				Packages/FeatureHome,
+				Packages/Users/annayatsun/BizCaptureProject/BizCapture/BizCapture/Packages/Core,
 			);
 			target = F5B927512E8A9C5A001E083F /* BizCapture */;
 		};
