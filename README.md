@@ -7,7 +7,7 @@ Below is a detailed breakdown of what the app does, its data model, architecture
 
 Create or edit items manually or by voice, scan barcodes/QR codes, attach photos, and add custom attributes.
 
-Operations
+# Operations
 
 Receipt — registering incoming goods
 
@@ -15,14 +15,14 @@ Transfer — moving stock between warehouses or locations
 
 Issue / Shipment — sending goods out
 
-Search & Filters
+# Search & Filters
 
 Full-text and voice-based search by SKU, name, serial number, brand, status, or location.
-📊 Movement History
+# Movement History
 
 View all stock movements for each item or warehouse.
 
-Export & Sharing
+# Export & Sharing
 
 Export documents and reports as PDF, CSV, or JSON, and share via email or integrations.
 
@@ -30,11 +30,13 @@ Offline-First
 
 All actions work offline and sync automatically when the device reconnects.
 
-Roles & Permissions
+# Roles & Permissions
 
 Two base roles:
 
 Operator — performs warehouse operations
+
+# Modules (SPM) and Screens (TCA)
 
 Manager — reviews, approves, and manages permissions
 Module	Purpose
