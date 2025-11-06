@@ -9,6 +9,7 @@ let package = Package(
   platforms: [.iOS(.v17)],
   products: [
     .library(name: "Core", targets: ["Core"]),
+    .library(name: "DesignSystem", targets: ["DesignSystem"]),
     .library(name: "NetworkingKit", targets: ["NetworkingKit"]) // опционально
   ],
   dependencies: [
@@ -27,9 +28,19 @@ let package = Package(
       path: "Sources/NetworkingKit"
     ),
     .target(
+      name: "DesignSystem",
+      dependencies: [
+        .product(name: "Dependencies", package: "swift-dependencies")
+      ],
+      path: "Sources/DesignSystem",
+      resources: [.process("Resources")]
+    ),
+    
+    .target(
       name: "Core",
       dependencies: [
         "NetworkingKit",
+        "DesignSystem",
         .product(name: "Dependencies", package: "swift-dependencies")
       ],
       path: "Sources/Core"

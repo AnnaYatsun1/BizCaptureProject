@@ -27,7 +27,7 @@ struct BizCaptureApp: App {
 
     var body: some Scene {
         WindowGroup {
-            ContentView(store: Store(initialState: ContenViewReducer.State(item: []), reducer: { ContenViewReducer() }))
+            ContentView(store: Store(initialState: TabsFeature.State(), reducer: { TabsFeature() }))
         }
         .modelContainer(sharedModelContainer)
     }

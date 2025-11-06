@@ -7,68 +7,38 @@
 
 import SwiftUI
 import SwiftData
+import Core
 //import CoreModule
 //import DocumentsFeature
 import ComposableArchitecture
+import FeatureHome
+import FeatureFeatureChat
 
 
 struct ContentView: View {
-//    @Environment(\.modelContext) private var modelContext
-//    @Query private var items: [Item]
-
-    private var store: StoreOf<ContenViewReducer>
-    
-    init(store: StoreOf<ContenViewReducer>) {
-        self.store = store
-    }
-    
+    var store: StoreOf<TabsFeature>
     var body: some View {
-        WithViewStore(store, observe:  \.item) { viewStore in
-                    NavigationSplitView {
-                        List {
-                            ForEach(viewStore.state) { item in
-                                NavigationLink {
-                                    Text("Item at \(item.timestamp, format: Date.FormatStyle(date: .numeric, time: .standard))")
-                                } label: {
-                                    Text(item.timestamp, format: Date.FormatStyle(date: .numeric, time: .standard))
-                                }
-                            }
-                            .onDelete( ) { indexSet in
-                                viewStore.send(.edite(indexSet))
-                            }
-                        }
-                        .toolbar {
-                            ToolbarItem(placement: .navigationBarTrailing) {
-                                EditButton()
-                            }
-                            ToolbarItem {
-                                Button(action: { viewStore.send(.add) } , label:  { Label("Add Item", systemImage: "plus") })
-                            }
-                        }
-                    } detail: {
-                        Text("Select an item")
-                    }
-        }
-
-    }
-
-    private func addItem() {
-        withAnimation {
-            let newItem = Item(timestamp: Date())
-//            modelContext.insert(newItem)
+        ZStack {
+          switch store.selected {
+          case .home:    HomeView(store: store.scope(state: \.home,    action: \.home))
+          case .chat:    ChatView(store: store.scope(state: \.chat,    action: \.chat))
+          case .profile: ProfileView(store: store.scope(state: \.profile, action: \.profile))
+          }
+        }.frame(maxWidth: .infinity, maxHeight: .infinity)
+        .safeAreaInset(edge: .bottom) {
+              GlassTabBar(
+                selected: Binding(
+                  get: { store.selected },
+                  set: { store.send(.setSelected($0)) }
+                )
+              ).padding(.bottom, 8)
+              .ignoresSafeArea(edges: .bottom)
         }
     }
+  }
 
-    private func deleteItems(offsets: IndexSet) {
-        withAnimation {
-            for index in offsets {
-//                modelContext.delete(items[index])
-            }
-        }
-    }
-}
-//
 //#Preview {
-//    ContentView()
+//    ContentView(store: Store(initialState: TabsFeature.State(), reducer: { TabsFeature() }))
 //        .modelContainer(for: Item.self, inMemory: true)
+//    
 //}

@@ -1,6 +1,8 @@
-import Foundation
-public struct HomeEntity: Identifiable, Equatable, Sendable {
-  public let id: Int
-  public var title: String
-  public init(id: Int, title: String) { self.id = id; self.title = title }
+import SwiftUI
+
+public struct RomeCardRoomModel: Identifiable, Equatable, Sendable {
+    public let kind: Room
+    public let id: UUID = UUID()
+    public let imageName: Image
+    public let title: String
 }

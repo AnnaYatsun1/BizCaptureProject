@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		F5079FBA2E8E91E900A5B581 /* ComposableArchitecture in Frameworks */ = {isa = PBXBuildFile; productRef = F5079FB92E8E91E900A5B581 /* ComposableArchitecture */; };
+		F586D9912EB2756B00BEABAB /* FeatureFeatureChat in Frameworks */ = {isa = PBXBuildFile; productRef = F586D9902EB2756B00BEABAB /* FeatureFeatureChat */; };
+		F590DD5B2EB2639500B5BA18 /* FeatureHome in Frameworks */ = {isa = PBXBuildFile; productRef = F590DD5A2EB2639500B5BA18 /* FeatureHome */; };
 		F5975EAE2EA9045B006E976B /* Core in Frameworks */ = {isa = PBXBuildFile; productRef = F5F3B8A82EA8FFD400AD7D4D /* Core */; };
 		F5975EAF2EA9045B006E976B /* NetworkingKit in Frameworks */ = {isa = PBXBuildFile; productRef = F5F3B8AA2EA8FFD400AD7D4D /* NetworkingKit */; };
 		F5F3B8A22EA8FECC00AD7D4D /* scaffold_feature.sh in Resources */ = {isa = PBXBuildFile; fileRef = F5F3B8A12EA8FEC500AD7D4D /* scaffold_feature.sh */; };
@@ -42,7 +44,6 @@
 			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
 			membershipExceptions = (
 				Packages/FeatureHome,
-				Packages/Users/annayatsun/BizCaptureProject/BizCapture/BizCapture/Packages/Core,
 			);
 			target = F5B927512E8A9C5A001E083F /* BizCapture */;
 		};
@@ -74,6 +75,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F586D9912EB2756B00BEABAB /* FeatureFeatureChat in Frameworks */,
+				F590DD5B2EB2639500B5BA18 /* FeatureHome in Frameworks */,
 				F5975EAF2EA9045B006E976B /* NetworkingKit in Frameworks */,
 				F5975EAE2EA9045B006E976B /* Core in Frameworks */,
 				F5079FBA2E8E91E900A5B581 /* ComposableArchitecture in Frameworks */,
@@ -97,6 +100,13 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		F590DD592EB2639500B5BA18 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		F5B927492E8A9C5A001E083F = {
 			isa = PBXGroup;
 			children = (
@@ -104,6 +114,7 @@
 				F5B927542E8A9C5A001E083F /* BizCapture */,
 				F5B927672E8A9C5C001E083F /* BizCaptureTests */,
 				F5B927712E8A9C5C001E083F /* BizCaptureUITests */,
+				F590DD592EB2639500B5BA18 /* Frameworks */,
 				F5B927532E8A9C5A001E083F /* Products */,
 			);
 			sourceTree = "<group>";
@@ -141,6 +152,8 @@
 				F5079FB92E8E91E900A5B581 /* ComposableArchitecture */,
 				F5F3B8A82EA8FFD400AD7D4D /* Core */,
 				F5F3B8AA2EA8FFD400AD7D4D /* NetworkingKit */,
+				F590DD5A2EB2639500B5BA18 /* FeatureHome */,
+				F586D9902EB2756B00BEABAB /* FeatureFeatureChat */,
 			);
 			productName = BizCapture;
 			productReference = F5B927522E8A9C5A001E083F /* BizCapture.app */;
@@ -227,6 +240,8 @@
 			packageReferences = (
 				F5079FB82E8E91E900A5B581 /* XCRemoteSwiftPackageReference "swift-composable-architecture" */,
 				F5975EC72EA9048E006E976B /* XCLocalSwiftPackageReference "../../Documents/Модули/Core" */,
+				F590DD582EB2635900B5BA18 /* XCLocalSwiftPackageReference "Packages/FeatureHome" */,
+				F586D9922EB2758400BEABAB /* XCLocalSwiftPackageReference "BizCapture/Packages/FeatureFeatureChat" */,
 			);
 			preferredProjectObjectVersion = 77;
 			productRefGroup = F5B927532E8A9C5A001E083F /* Products */;
@@ -594,6 +609,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCLocalSwiftPackageReference section */
+		F586D9922EB2758400BEABAB /* XCLocalSwiftPackageReference "BizCapture/Packages/FeatureFeatureChat" */ = {
+			isa = XCLocalSwiftPackageReference;
+			relativePath = BizCapture/Packages/FeatureFeatureChat;
+		};
+		F590DD582EB2635900B5BA18 /* XCLocalSwiftPackageReference "Packages/FeatureHome" */ = {
+			isa = XCLocalSwiftPackageReference;
+			relativePath = Packages/FeatureHome;
+		};
 		F5975EC72EA9048E006E976B /* XCLocalSwiftPackageReference "../../Documents/Модули/Core" */ = {
 			isa = XCLocalSwiftPackageReference;
 			relativePath = "../../Documents/Модули/Core";
@@ -616,6 +639,14 @@
 			isa = XCSwiftPackageProductDependency;
 			package = F5079FB82E8E91E900A5B581 /* XCRemoteSwiftPackageReference "swift-composable-architecture" */;
 			productName = ComposableArchitecture;
+		};
+		F586D9902EB2756B00BEABAB /* FeatureFeatureChat */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = FeatureFeatureChat;
+		};
+		F590DD5A2EB2639500B5BA18 /* FeatureHome */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = FeatureHome;
 		};
 		F5F3B8A82EA8FFD400AD7D4D /* Core */ = {
 			isa = XCSwiftPackageProductDependency;
